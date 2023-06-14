@@ -1,27 +1,76 @@
+@import url("https://fonts.googleapis.com/css2?family=Manrope:wght@200;300;400;500;600;700;800&display=swap");
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-:root {
-  --foreground-rgb: 0, 0, 0;
-  --background-start-rgb: 214, 219, 220;
-  --background-end-rgb: 255, 255, 255;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --foreground-rgb: 255, 255, 255;
-    --background-start-rgb: 0, 0, 0;
-    --background-end-rgb: 0, 0, 0;
-  }
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Manrope", sans-serif;
 }
 
 body {
-  color: rgb(var(--foreground-rgb));
-  background: linear-gradient(
-      to bottom,
-      transparent,
-      rgb(var(--background-end-rgb))
-    )
-    rgb(var(--background-start-rgb));
+  overflow-x: hidden;
+}
+
+/* GENERAL */
+.max-width {
+  @apply max-w-[1440px] mx-auto;
+}
+
+.padding-x {
+  @apply sm:px-16 px-6;
+}
+
+.padding-y {
+  @apply py-4;
+}
+
+.flex-center {
+  @apply flex items-center justify-center;
+}
+
+.flex-between {
+  @apply flex justify-between items-center;
+}
+
+/* BUTTONS */
+button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+  transition: none !important;
+  transform: none !important;
+}
+.btn {
+  @apply flex flex-row relative justify-center items-center outline-none rounded-full hover:scale-105 transition-all;
+}
+
+.btn-primary {
+  @apply bg-primary-blue text-white;
+}
+
+.btn-secondary {
+  @apply bg-white text-primary-blue;
+}
+
+.btn-small {
+  @apply py-2 px-4;
+}
+.btn-medium {
+  @apply py-3 px-6;
+}
+.btn-large {
+  @apply py-4 px-8;
+}
+
+/* TEXT */
+h1 {
+  font-size: 4rem;
+  font-weight: bold;
+}
+
+h2 {
+  font-size: 1.5rem;
 }
