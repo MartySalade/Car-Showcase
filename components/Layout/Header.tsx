@@ -5,8 +5,8 @@ import { Button } from "../Buttons/Button";
 
 export const Header = () => {
   return (
-    <header>
-      <nav className="flex-between">
+    <header className="z-10">
+      <nav className="flex-between w-full">
         <Image
           src="./assets/logos/logo.svg"
           alt="logo - return home"
