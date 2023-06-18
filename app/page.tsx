@@ -82,7 +82,7 @@ export default function Home({ searchParams }: HomeProps) {
               Error occurs, please try again later.
             </p>
           ) : cars && cars.length === 0 ? (
-            <p className="mt-4 text-grey text-center">
+            <p className="mt-4 text-grey text-center font-bold text-lg">
               No cars found for your request
             </p>
           ) : (
