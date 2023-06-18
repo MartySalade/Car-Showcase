@@ -1,7 +1,7 @@
 export type SearchParam = {
-  make?: string;
-  year?: number;
-  model?: string;
-  limit?: number;
-  fuel?: string;
+  make: string | null;
+  year: string | null;
+  model: string | null;
+  limit: string | null;
+  fuel: string | null;
 };

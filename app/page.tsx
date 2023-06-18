@@ -17,16 +17,18 @@ type HomeProps = {
   searchParams: SearchParam;
 };
 
-export default function Home({ searchParams }: HomeProps) {
+export const dynamic = "force-dynamic";
+
+export default function Home() {
   const catalogRef = useRef<HTMLDivElement>(null);
   const searchParameters = useSearchParams();
   const router = useRouter();
   const params = {
-    model: searchParams.model,
-    make: searchParams.make,
-    year: searchParams.year,
-    fuel: searchParams.fuel,
-    limit: searchParams.limit,
+    model: searchParameters.get("model"),
+    make: searchParameters.get("make"),
+    year: searchParameters.get("year"),
+    fuel: searchParameters.get("fuel"),
+    limit: searchParameters.get("limit"),
   };
 
   useEffect(() => {
@@ -102,7 +104,7 @@ export default function Home({ searchParams }: HomeProps) {
           <div className="w-full flex-center mt-4">
             <Button
               disabled={
-                (params.limit && params.limit >= 30) ||
+                (params.limit && parseInt(params.limit) >= 30) ||
                 !cars ||
                 cars.length === 0
               }

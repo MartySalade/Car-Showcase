@@ -7,7 +7,7 @@ async function getCars(params: SearchParam) {
   if (!params.model && !params.make) {
     params.make = "toyota";
   }
-  if (!params.limit) params.limit = 10;
+  if (!params.limit) params.limit = "10";
   const options = {
     method: "GET",
     url: "https://cars-by-api-ninjas.p.rapidapi.com/v1/cars",
