@@ -66,7 +66,7 @@ export default function Home({ searchParams }: HomeProps) {
         className="flex w-full flex-col lg:flex-row justify-center gap-4 xl:mt-0 mt-16 md:mt-24 mb-16"
       >
         <div
-          className="overflow-x-hidden w-full flex flex-col gap-4 px-2"
+          className="overflow-x-hidden w-full flex flex-col gap-4 px-2 overflow-hidden"
           id="carCatalogue"
         >
           <h3 className="ml-2 text-2xl font-bold">Car catalogue</h3>
