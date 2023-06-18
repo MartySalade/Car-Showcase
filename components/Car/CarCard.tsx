@@ -5,7 +5,6 @@ import { useState } from "react";
 import { CarStat } from "./CarStat";
 import { getRentPrice } from "@/utils/getRentPrice";
 import { generateCarImageUrl } from "@/utils/generateCarImageUrl";
-import { Button } from "../Buttons/Button";
 import { CarDetail } from "./CarDetail";
 
 type CarCardProps = {
@@ -30,7 +29,10 @@ export const CarCard = ({ car }: CarCardProps) => {
           alt="add to favorite"
           width={20}
           height={20}
-          onClick={() => setFavorite(!favorite)}
+          onClick={(e) => {
+            e.stopPropagation();
+            setFavorite(!favorite);
+          }}
           className="cursor-pointer hover:scale-105"
         />
       </div>

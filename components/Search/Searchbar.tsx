@@ -6,14 +6,14 @@ import { useRouter } from "next/navigation";
 
 import { SearchManufacturer } from "./SearchManufacturer";
 
-export const SearchButton = ({ otherClasses }: { otherClasses: string }) => (
-  <button type="submit" className={`-ml-3 z-10 ${otherClasses}`}>
+const SearchButton = () => (
+  <button type="submit" className="z-10">
     <Image
       src={"/assets/icons/magnifying-glass.svg"}
-      alt={"magnifying glass"}
-      width={40}
-      height={40}
-      className="object-contain"
+      alt={"search button"}
+      width={27}
+      height={27}
+      className="absolute object-contain right-2 top-3"
     />
   </button>
 );
@@ -55,17 +55,17 @@ export const SearchBar = () => {
 
   return (
     <form
-      className="flex items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl"
+      className="flex gap-4 items-center justify-start max-sm:flex-col w-full relative max-sm:gap-4 max-w-3xl"
       onSubmit={handleSearch}
     >
-      <div className="flex-1 max-sm:w-full flex justify-start items-center relative">
+      <div className="w-full flex-1 flex justify-start items-center relative">
         <SearchManufacturer
           manufacturer={manufacturer}
           setManuFacturer={setManuFacturer}
         />
-        <SearchButton otherClasses="sm:hidden" />
+        <SearchButton />
       </div>
-      <div className="md:ml-12 flex-1 max-sm:w-full flex justify-start items-center relative w-full">
+      <div className="w-full flex-1 flex justify-start items-center relative">
         <Image
           src="/assets/icons/model-icon.png"
           width={25}
@@ -79,11 +79,10 @@ export const SearchBar = () => {
           value={model}
           onChange={(e) => setModel(e.target.value)}
           placeholder="Tiguan..."
-          className="w-full h-[48px] pl-12 bg-light-white rounded-r-full max-sm:rounded-full outline-none cursor-pointer text-sm"
+          className="w-full h-[48px] pl-12 bg-light-white rounded-full max-sm:rounded-full outline-none cursor-pointer text-sm"
         />
-        <SearchButton otherClasses="sm:hidden" />
+        <SearchButton />
       </div>
-      <SearchButton otherClasses="max-sm:hidden" />
     </form>
   );
 };

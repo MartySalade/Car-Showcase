@@ -40,7 +40,7 @@ export const SearchManufacturer = ({
           </Combobox.Button>
 
           <Combobox.Input
-            className="w-full h-[48px] pl-12 rounded-l-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm"
+            className="w-[calc(100%-3rem)] h-[48px] pl-12 rounded-full max-sm:rounded-full bg-light-white outline-none cursor-pointer text-sm"
             displayValue={(item: string) => item}
             onChange={(event) => setQuery(event.target.value)}
             placeholder="Volkswagen..."
@@ -68,7 +68,7 @@ export const SearchManufacturer = ({
                   <Combobox.Option
                     key={item}
                     className={({ active }) =>
-                      `relative search-manufacturer__option ${
+                      `relative px-2 cursor-pointer ${
                         active ? "bg-primary-blue text-white" : "text-gray-900"
                       }`
                     }

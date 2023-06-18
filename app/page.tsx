@@ -65,11 +65,14 @@ export default function Home({ searchParams }: HomeProps) {
         ref={catalogRef}
         className="flex w-full flex-col lg:flex-row justify-center gap-4 xl:mt-0 mt-16 md:mt-24 mb-16"
       >
-        <div className="w-full flex flex-col gap-4" id="carCatalogue">
+        <div
+          className="overflow-x-hidden w-full flex flex-col gap-4 px-2"
+          id="carCatalogue"
+        >
           <h3 className="ml-2 text-2xl font-bold">Car catalogue</h3>
-          <div className="flex-between flex-wrap gap-4">
+          <div className="flex items-center flex-wrap gap-4">
             <SearchBar />
-            <div className="flex items-center gap-2">
+            <div className="w-full flex items-center gap-2">
               <Filter type="Fuel" values={fuels} />
               <Filter type="Year" values={yearsOfProduction} />
             </div>
@@ -83,7 +86,7 @@ export default function Home({ searchParams }: HomeProps) {
               No cars found for your request
             </p>
           ) : (
-            <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-14">
+            <div className="grid 2xl:grid-cols-4 xl:grid-cols-3 md:grid-cols-2 grid-cols-1 w-full gap-8 pt-8">
               {isLoading ? (
                 skeletonCards.map((_, index: number) => (
                   <CarSkeleton key={index} />
