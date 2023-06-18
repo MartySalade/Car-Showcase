@@ -13,13 +13,7 @@ export const Header = () => {
           width={200}
           height={30}
         />
-        <Button
-          text="Sign up"
-          onClick={() => {}}
-          variant="secondary"
-          disabled
-          className="z-10"
-        />
+        <Button text="Sign up" onClick={() => {}} disabled className="z-10" />
       </nav>
     </header>
   );

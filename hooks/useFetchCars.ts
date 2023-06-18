@@ -5,7 +5,7 @@ import { useQuery } from "@tanstack/react-query";
 
 async function getCars(params: SearchParam) {
   if (!params.model && !params.make) {
-    params.make = "audi";
+    params.make = "toyota";
   }
   if (!params.limit) params.limit = 10;
   const options = {
