@@ -2,7 +2,7 @@
 
 Car Showcase is a web application that allows users to browse and search for cars. It provides a user-friendly interface to view details about different car models, including specifications, images, and pricing information. This project is built using **Next.js, TypeScript, and Tailwind CSS**.
 
-The project is deployed using Vercel and is available at the following address: **https://car-showcase-portfolio.vercel.app/**.
+The project is deployed using Vercel and is available **[here](https://car-showcase-portfolio.vercel.app/)**.
 
 ## Features
 
